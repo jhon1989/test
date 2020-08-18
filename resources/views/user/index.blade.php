@@ -7,12 +7,19 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <select class="form-control" name="estado" id="estado">
-                        <option value="Activo" selected>Activo</option>
-                        <option value="Inactivo">Inactivo</option>
+                        @if(request()->get('estado') == 'Activo')
+                            <option value="Activo" selected>Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        @endif
+
+                        @if(request()->get('estado') == 'Inactivo')
+                            <option value="Inactivo" selected>Inactivo</option>
+                            <option value="Activo">Activo</option>
+                        @endif
                     </select>
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-primary" type="submit" >Buscar</button>
+                    <button class="btn btn-primary" type="submit">Buscar</button>
                 </div>
             </div>
         </form>

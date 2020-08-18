@@ -49742,21 +49742,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app',
-  data: {
-    selectProvincias: [],
-    idpais: 'prueba'
-  },
+  data: {},
   methods: {
     cambiarEstadoUsuario: function cambiarEstadoUsuario(id, event) {
-      var _this = this;
-
       var url = 'user/cambiarEstadoUsuario';
       axios.post(url, {
         estado: event.target.value,
         id: id
-      }).then(function (response) {
-        _this.selectProvincias = response.data;
-      });
+      }).then(function (response) {});
     }
   }
 });

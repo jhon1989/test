@@ -31,14 +31,12 @@ const app = new Vue({
     el: '#app',
 
     data: {
-        selectProvincias: [],
-        idpais: 'prueba'
+
     },
     methods: {
         cambiarEstadoUsuario: function (id, event) {
             var url = 'user/cambiarEstadoUsuario';
             axios.post(url, {estado: event.target.value, id: id}).then(response => {
-                this.selectProvincias = response.data;
             });
         }
     }
